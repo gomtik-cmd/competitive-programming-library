@@ -2,11 +2,12 @@
 #define fori(i,n) for(int i=0;i<n;i++)
 
 using namespace std;
-//copy below function
+
 #ifndef fori
 #define fori(i,n) for(int i=0;i<n;i++)
 #endif
-vector<int> dij(vector<vector<int> >g, int start)
+
+vector<int> dijkstrasAlgo(vector<vector<int> >g, int start)
 {
 	int n = g.size();
 	vector<int> dist(n,INT_MAX);
@@ -34,17 +35,17 @@ vector<int> dij(vector<vector<int> >g, int start)
 }
 
 
-//testing
 int main()
 {
-	int n;
-	cin>>n;
-	vector<vector<int> >g(n, vector<int>(n));
-	fori(i,n){
-		fori(j,n){
+	int input_n;
+	cout << "Enter value of n: "<< endl;
+	cin>>input_n;
+	vector<vector<int> >g(input_n, vector<int>(input_n));
+	fori(i,input_n){
+		fori(j,input_n){
 			cin>>g[i][j];
 		}
 	}
-	vector<int> t = dij(g,0);
-	fori(i,n)cout<<t[i]<<" ";
+	vector<int> t = dijkstrasAlgo(g,0);
+	fori(i,input_n)cout<<t[i]<<" ";
 }
