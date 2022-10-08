@@ -1,19 +1,21 @@
-def binarySearch(vector, x, low, high):
+def binarySearch(vlist, x, low, high):
 
     # Repeat until the pointers low and high meet each other
     while low <= high:
 
+        # goto median
         mid = low + (high - low)//2
 
-        if vector[mid] == x:
+        if vlist[mid] == x:
             return mid
 
-        elif vector[mid] < x:
+        elif vlist[mid] < x:
             low = mid + 1
 
         else:
             high = mid - 1
 
+    # couldn';t find anything. return -1
     return -1
 
 
